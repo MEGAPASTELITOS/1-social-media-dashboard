@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "./components/Header";
 import { OverviewContainer, OverviewTodayContainer } from "./components/OverviewContiner";
 
@@ -10,3 +12,4 @@ export default function Home() {
    </main>
   );
 }
+//funiciona?

@@ -4,12 +4,7 @@ import { useEffect, useId, useState } from "react"
 
 export function Header() {
     const DarkModeId = useId()
-      let initialDarkMode =  JSON.parse(localStorage.getItem('dark') as string) || false
-      if(!initialDarkMode){
-        initialDarkMode = false
-      }
-  
-    const [dark,setDark] = useState<boolean>(initialDarkMode)
+    const [dark,setDark] = useState<boolean>(JSON.parse(localStorage.getItem('dark') || "false"))
 
 
     const handleClik = () => {
