@@ -4,7 +4,7 @@ import { useEffect, useId, useState } from "react"
 
 export function Header() {
     const DarkModeId = useId()
-      let initialDarkMode =  JSON.parse(localStorage.getItem('dark') as string)
+      let initialDarkMode =  JSON.parse(localStorage.getItem('dark') as string) || false
       if(!initialDarkMode){
         initialDarkMode = false
       }
