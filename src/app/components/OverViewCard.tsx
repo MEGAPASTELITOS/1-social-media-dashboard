@@ -12,14 +12,14 @@ export function compressNumber(audience:number) {
     }
 }
 
-export const networkIconsRender = {
+export const networkIconsRender:any = {
   Facebook: <FacebookIcon/>,
   Twitter: <XIcon/>,
   Instagram: <InstagramIcon/>,
   YouTube: <YoutubeIcon/>
 }
 
-const networkBg = {
+const networkBg:any = {
   Facebook: "bg-facebook",
   Twitter: "bg-twitter",
   Instagram: "bg-instagram",
