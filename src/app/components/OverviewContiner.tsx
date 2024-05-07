@@ -6,12 +6,18 @@ import { OverviewCard } from "./OverViewCard"
 import { Overview, OverviewToDay } from "@/types"
 import { OverviewTodayCard } from "./OverViewToDayCard"
 
+const apiKey = '$2a$10$QeNx4YxNWKqXrGS8WeDGxe1z7c1uCZQnGEy7JQUJISeNFyhchmAnW'
+
 export function OverviewContainer () {
     const [overview,setOverview] = useState<Overview[]>()
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/data.json").then(async res => {
-            setOverview(await res.data.overview)
+        axios.get("https://api.jsonbin.io/v3/b/663a891facd3cb34a8446bbd",{
+            headers: {
+                'X-Access-Key': apiKey
+            }
+        }).then(async res => {
+            setOverview(await res.data.record.overview)
         })
     },[])
 
@@ -32,11 +38,14 @@ export function OverviewTodayContainer () {
     const [overviewToday,setOverviewToday] = useState<OverviewToDay[]>()
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/data.json").then(async res => {
-            setOverviewToday(await res.data.overviewToday)
+        axios.get("https://api.jsonbin.io/v3/b/663a891facd3cb34a8446bbd",{
+            headers: {
+                'X-Access-Key': apiKey
+            }
+        }).then(async res => {
+            setOverviewToday(await res.data.record.overviewToday)
         })
     },[])
-
     if(!overviewToday) {
         return (
             <p>Error</p>
