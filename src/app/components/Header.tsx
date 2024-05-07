@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useId, useState } from "react"
+import { useLocalStorage } from "../hook/useLocalStorage"
 
 export function Header() {
     const DarkModeId = useId()
-    const [dark,setDark] = useState<boolean>(JSON.parse(localStorage.getItem('dark') || "false"))
+    const [dark,setDark] = useLocalStorage("dark", "false")
 
 
     const handleClik = () => {
